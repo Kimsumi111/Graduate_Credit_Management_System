@@ -118,6 +118,8 @@ public class Print
 				System.out.print("학점을 입력해주세요:");
 				break;
 			case 11 : 
+				System.out.println("0~4.5:일치하는 성적 입력.");
+				System.out.println("-1: 성적 없음.");
 				System.out.print("성적을 입력해주세요:");
 				break;
 			case 20 :

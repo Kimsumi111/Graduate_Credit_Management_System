@@ -185,6 +185,7 @@ class Main
 								accUser.setString("Classify",IntMem[1],Input.String(accRequ,8));
 								accUser.setString("ClassName",IntMem[1],Input.String(9));
 								accUser.setDouble("Credit",IntMem[1],Input.Double(0.5, 4.0, 10));
+								accUser.setDouble("Grade",IntMem[1],Input.Double(-1.0, 4.5, 11));
 								Print.Option(100);
 								if(Input.Int(1,2,-1) == 2)
 									break;

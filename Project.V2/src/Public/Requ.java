@@ -6,6 +6,7 @@ public class Requ
 	String Major;
 	String[] Classify = new String[100];
 	double[] Credit = new double[100];
+	double[] Grade = new double[100];
 	String[] Term = {"1학기","하계","2학기","동계"};
 
 	public void init()
@@ -24,6 +25,7 @@ public class Requ
 		this.Major = requ.Major;
 		System.arraycopy(requ.Classify, 0, this.Classify, 0, requ.Classify.length);
 		System.arraycopy(requ.Credit, 0, this.Credit, 0, requ.Credit.length);
+		System.arraycopy(requ.Grade, 0, this.Grade, 0, requ.Grade.length);
 	}
 }
 
