@@ -1,29 +1,25 @@
 package Public;
 
-public class Requ
-{
-	int Admi;
-	String Major;
-	String[] Classify = new String[100];
-	double[] Credit = new double[100];
-	String[] Term = {"1학기","하계","2학기","동계"};
+import java.io.Serializable;
 
-	public void init()
+public class Requ implements Serializable
+{
+	private static final long serialVersionUID = 1L;
+	public int admi;
+	public String major;
+	public String[] category = new String[10];
+	public double[] credit = new double[10];
+	public Requ()
 	{
-		this.Admi = -1;
-		this.Major = null;
-		for(int i = 0; i < 100; i++)
-		{
-			this.Classify[i] = null;
-			this.Credit[i] = -1.0;
-		}
+		admi = -1;
+		major = null;
 	}
-	public void copy(Requ requ)
+	public void copy(Requ Requ)
 	{
-		this.Admi = requ.Admi;
-		this.Major = requ.Major;
-		System.arraycopy(requ.Classify, 0, this.Classify, 0, requ.Classify.length);
-		System.arraycopy(requ.Credit, 0, this.Credit, 0, requ.Credit.length);
+		this.admi = Requ.admi;
+		this.major = Requ.major;
+		System.arraycopy(Requ.category, 0, this.category, 0, Requ.category.length);
+		System.arraycopy(Requ.credit, 0, this.credit, 0, Requ.credit.length);
 	}
 }
 

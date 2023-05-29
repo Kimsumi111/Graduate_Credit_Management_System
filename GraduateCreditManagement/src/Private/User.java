@@ -1,137 +1,97 @@
 package Private;
 
+import java.io.Serializable;
+
 import Protected.UserForm;
 import Public.Requ;
+import Public.Lecture;
 
-public class User extends UserForm
+public class User extends UserForm implements Serializable
 {
-	public User() {}
-	public User(int Id, String Password)
+	private static final long serialVersionUID = 1L;
+	public User()
 	{
-		this.Id = Id;
-		this.Password = Password;
+		super();
+		password = null;
+		id = -1;
+		major = null;
+		grade = -1;
+		term = null;
+		lectureSize = 0;
 	}
 	public int getInt(String Str, int n)
 	{
 		switch (Str)
 		{
 			case "Id" :
-				return this.Id;
-			case "UserLevel" :
-				return this.UserLevel;
-			case "Level" :
-				return this.Level[n];
-			case "Code" :
-				return this.Code[n];
+				return this.id;
+			case "Grade" :
+				return this.grade;
 			case "Admi" :
-				return this.Id/1000000;
+				return this.id/1000000;
+			case "LectureSize" :
+				return this.lectureSize;
 			default :
 				return -1;
 		}
 	}
-	public String getString(String Str, int n)
+	public String getString(String str, int n)
 	{
-		switch (Str)
+		switch (str)
 		{
 			case "Password" :
-				return this.Password;
+				return this.password;
 			case "Major" :
-				return this.Major;
-			case "ClassName" : 
-				return this.ClassName[n];
-			case "UserTerm" :
-				return this.UserTerm;
-			case "Classify" :
-				return this.Classify[n];
+				return this.major;
 			case "Term" :
-				return this.Term[n];
+				return this.term;
 			default :
 				return null;
 		}
 	}
-	public double getDouble(String Str, int n)
+
+	public void setInt(String str, int n, int m)
 	{
-		switch (Str)
-		{
-			case "Credit" :
-				return this.Credit[n];
-			case "Grade" :
-				return this.Grade[n];
-			default :
-				return -1;
-		}
-	}
-	public Requ getRequ(String Str)
-	{
-		switch (Str)
-		{
-			case "Requ" :
-				return this.UserRequ[0];
-			default :
-				return null;
-		}
-	}
-	public void setInt(String Str, int n, int m)
-	{
-		switch (Str)
+		switch (str)
 		{
 			case "Id" :
-				this.Id = m;
-				break;
-			case "UserLevel" :
-				this.UserLevel = m;
-				break;
-			case "Level" :
-				this.Level[n] = m;
-				break;
-			case "Code" :
-				this.Code[n] = m;
-				break;
-		}
-	}
-	public void setString(String Str, int n, String Str1)
-	{
-		switch (Str)
-		{
-			case "Password" :
-				this.Password = Str1;
-				break;
-			case "Major" :
-				this.Major= Str1;
-				break;
-			case "ClassName" : 
-				this.ClassName[n]= Str1;
-				break;
-			case "UserTerm" :
-				this.UserTerm = Str1;
-				break;
-			case "Classify" :
-				this.Classify[n] = Str1;
-				break;
-			case "Term" :
-				this.Term[n] = Str1;
-				break;
-		}
-	}
-	public void setDouble(String Str, int n, double m)
-	{
-		switch (Str)
-		{
-			case "Credit" :
-				this.Credit[n] = m;
+				this.id = m;
 				break;
 			case "Grade" :
-				this.Grade[n] = m;
+				this.grade = m;
+				break;
+			case "LectureSize" :
+				this.lectureSize = m;
 				break;
 		}
 	}
-	public void setRequ(String Str, Requ requ)
+	public void setString(String str, int n, String str1)
 	{
-		switch (Str)
+		switch (str)
 		{
-			case "Requ" :
-				 this.UserRequ[0] = requ;
-				 break;
+			case "Password" :
+				this.password = str1;
+				break;
+			case "Major" :
+				this.major= str1;
+				break;
+			case "Term" :
+				this.term = str1;
+				break;
+		}
+	}
+	public void setUser(String str,User user)
+	{
+		switch (str)
+		{
+			case "Copy":
+				this.password = user.password;
+				this.id = user.id;
+				this.major = user.major;
+				this.grade = user.grade;
+				this.term = user.term;
+				this.lectureSize = user.lectureSize;
+				break;
 		}
 	}
 }
