@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class RetrieveUserInfo extends JFrame{
+public class RetrieveUserInfo extends JPanel{
 	public static void main(String args[]) {
 		UserInfoFrame user_info = new UserInfoFrame();
 		JPanel user_info_p1 = new JPanel();

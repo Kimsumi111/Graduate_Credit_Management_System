@@ -1,25 +1,20 @@
-package LectureInfo;
+package GUI;
 import javax.swing.*;
 
-import UserInfo.MenuFrame;
+import UserInfo.RetrieveUserInfo;
 
 import java.awt.*;
-import java.awt.event.*;
 
-public class Menu{
+public class Menu extends JFrame{
 	public static void main(String args[]) {
+		RetrieveUserInfo retireveuserinfo = new RetrieveUserInfo();
+		
 		MenuFrame menu_f = new MenuFrame();
 		JLabel menu_l = new JLabel("Menu");
-		JButton menu_b1 = new JButton("Insert lecture information");
-		JButton menu_b2 = new JButton("Update lecture score");
-		JButton menu_b3 = new JButton("Delete lecture information");
-		JButton exitButton = new JButton("Exit");
-		exitButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                menu_f.dispose();
-            }
-        });
-		
+		JButton menu_b1 = new JButton("Retrieve/Update user information");
+		JButton menu_b2 = new JButton("Update lecture information");
+		JButton menu_b3 = new JButton("Retrieve enrollment information");
+		JButton menu_b4 = new JButton("Log out");
         JPanel menu_p = new JPanel();
         JPanel menu_p1 = new JPanel();
         
@@ -30,7 +25,7 @@ public class Menu{
 		menu_p.add(menu_b1);
 		menu_p.add(menu_b2);
 		menu_p.add(menu_b3);
-		menu_p.add(exitButton);
+		menu_p.add(menu_b4);
 		
 		Container cp = menu_f.getContentPane();
 		cp.add(menu_p1, BorderLayout.NORTH);
@@ -40,7 +35,5 @@ public class Menu{
 		menu_f.setVisible(true);
 	
 	}
-}		
-
-
-
+		
+}

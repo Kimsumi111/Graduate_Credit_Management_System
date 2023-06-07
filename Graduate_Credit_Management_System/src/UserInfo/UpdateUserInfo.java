@@ -10,7 +10,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class UpdateUserInfo{
+public class UpdateUserInfo extends JPanel{
 	public static void main(String args[]) {
 		UserInfoFrame user_info = new UserInfoFrame();
 		JPanel user_info_p1 = new JPanel();

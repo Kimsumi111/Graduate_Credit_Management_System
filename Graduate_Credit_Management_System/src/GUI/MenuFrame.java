@@ -1,4 +1,4 @@
-package LectureInfo;
+package GUI;
 import javax.swing.*;
 
 public class MenuFrame extends JFrame{
