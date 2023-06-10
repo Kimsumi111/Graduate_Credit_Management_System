@@ -2,7 +2,6 @@ package gui;
 
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.SpringLayout;
 
 //SpringUtilies가 사용이 안되는데 이유를 모르겠습니다
 public class LogIn extends JFrame {
@@ -23,6 +22,8 @@ public class LogIn extends JFrame {
         password.setLabelFor(fieldword);
         p.add(password);
         p.add(fieldword);
+        
+      
         
         this.setSize(300, 300);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
